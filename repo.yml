@@ -1,38 +1,42 @@
 buildpacks:
   - name: Paketo
+    url: "https://paketo.io/docs/"
     image:
       - "gcr.io/paketo-buildpacks/builder:full-cf"
       - "gcr.io/paketo-buildpacks/builder:base"
       - "gcr.io/paketo-buildpacks/builder:tiny"
     builders:
-      - lang: golang
-        with:
-          - mod
-          - dep
-      - lang: dot-net
-        with:
-          - core
-          - core-aspnet
-      - lang: nodejs
-        with:
-          - npm
-          - yarn
-      - lang: java
-        with:
-          - tomcat
-          - exec-jar
-          - gradle
-          - spring-boot
-          - maven
-          - sbt
-          - bellsoft-liberica
-          - jmx
-      - lang: scala
-        with:
-          - sbt
-      - lang: php
-      - exec: procfile
+      full-cf:
+        list:
+          - lang: golang
+            with:
+              - mod
+              - dep
+          - lang: dot-net
+            with:
+              - core
+              - core-aspnet
+          - lang: nodejs
+            with:
+              - npm
+              - yarn
+          - lang: java
+            with:
+              - tomcat
+              - exec-jar
+              - gradle
+              - spring-boot
+              - maven
+              - sbt
+              - bellsoft-liberica
+              - jmx
+          - lang: scala
+            with:
+              - sbt
+          - lang: php
+          - exec: procfile
   - name: Heroku
+    url: "https://devcenter.heroku.com/"
     image:
       - img: "heroku/buildpacks:18"
         url: "https://github.com/heroku/pack-images"
@@ -67,3 +71,18 @@ buildpacks:
             src: "https://github.com/heroku/nodejs-yarn-buildpack"
       - exec: procfile
         src: "https://github.com/heroku/procfile-cnb"
+  - name: Google
+    url: "https://github.com/GoogleCloudPlatform/buildpacks"
+    image:
+      - "gcr.io/buildpacks/builder"
+    builders:
+      generic:
+        url: "https://github.com/GoogleCloudPlatform/buildpacks#generic-builder-and-buildpacks"
+        list:
+          - lang: golang
+          - lang: nodejs
+          - lang: python
+          - lang: java
+          - lang: dot-net
+      function:
+        url: "https://github.com/GoogleCloudPlatform/buildpacks#building-a-function"
