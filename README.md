@@ -45,11 +45,11 @@ Provides `Procfile` launcher support with the [Procfile buildpack](https://githu
 `gcr.io/paketo-buildpacks/builder:full-cf`<br>
 (`ubuntu:bionic`-based [paketo stack](https://github.com/paketo-buildpacks/stacks) with common C libraries and utilities.)
 
-`gcr.io/paketo-buildpacks/builder:base`  
-(`ubuntu:bionic`-based [paketo stack](https://github.com/paketo-buildpacks/stacks) **without** many C libraries.)  
+`gcr.io/paketo-buildpacks/builder:base`<br>
+(`ubuntu:bionic`-based [paketo stack](https://github.com/paketo-buildpacks/stacks) **without** many C libraries.)
 
-`gcr.io/paketo-buildpacks/builder:tiny`  
-(`ubuntu:bionic`-based [paketo stack](https://github.com/paketo-buildpacks/stacks). Ideal for most Go apps)
+`gcr.io/paketo-buildpacks/builder:tiny`<br>
+(Distroless `ubuntu:bionic`-based [paketo stack](https://github.com/paketo-buildpacks/stacks). Ideal for most Go apps)
 
 ### Provides buildpacks for:
 
