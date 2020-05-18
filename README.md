@@ -2,7 +2,7 @@
 
 This is the repository for a collection of [Cloud-Native Buildpacks](https://buildpacks.io/), all outlined with some quick feature annotations.
 
-## [Heroku](https://devcenter.heroku.com/)
+## [Heroku Buildpacks](https://devcenter.heroku.com/)
 
 `heroku/buildpacks:18` ([source](https://github.com/heroku/pack-images))
 
@@ -32,25 +32,30 @@ This is the repository for a collection of [Cloud-Native Buildpacks](https://bui
 
 Provides `Procfile` launcher support with the [Procfile buildpack](https://github.com/heroku/procfile-cnb)
 
+*Existing heroku buildpacks can be implicitly converted to CNBs by applying [heroku's CNB shim](https://github.com/heroku/cnb-shim).*
+
 ## [Paketo Buildpacks](https://paketo.io/)
 
-(The **Paketo Buildpacks** project applies learnings from developing **CloudFoundry Buildpacks** to provide CNB implementations for the most popular languages)
+(A **CloudFoundry Project** applying learnings from **CloudFoundry Buildpacks**)
 
-**Builders** ([source](https://github.com/paketo-buildpacks/builder))  
-`gcr.io/paketo-buildpacks/builder:full-cf`  
-(Builder based off of the `ubuntu:bionic` [stack](https://github.com/paketo-buildpacks/stacks) with many common C libraries and utilities. Ideal for apps **with** many native extensions)    
+#### Builders:
+
+([source](https://github.com/paketo-buildpacks/builder))
+
+`gcr.io/paketo-buildpacks/builder:full-cf`<br>
+(`ubuntu:bionic`-based [paketo stack](https://github.com/paketo-buildpacks/stacks) with common C libraries and utilities.)
 
 `gcr.io/paketo-buildpacks/builder:base`  
-(Builder based off of the `ubuntu:bionic` [stack](https://github.com/paketo-buildpacks/stacks). Ideal for apps **without** many native extensions)  
+(`ubuntu:bionic`-based [paketo stack](https://github.com/paketo-buildpacks/stacks) **without** many C libraries.)  
 
 `gcr.io/paketo-buildpacks/builder:tiny`  
-(Builder based off of a distroless `ubuntu:bionic` [stack](https://github.com/paketo-buildpacks/stacks). Ideal for most Go apps)
+(`ubuntu:bionic`-based [paketo stack](https://github.com/paketo-buildpacks/stacks). Ideal for most Go apps)
 
-### Currently Supported Paketo Buildpacks:
+### Provides buildpacks for:
 
-- [Go](https://github.com/paketo-buildpacks/go)
+- [Golang](https://github.com/paketo-buildpacks/go)
 - [.NET Core](https://github.com/paketo-buildpacks/dotnet-core)
-- [Node.js](https://github.com/paketo-buildpacks/nodejs)
+- [NodeJS](https://github.com/paketo-buildpacks/nodejs)
 - [Java](https://github.com/paketo-buildpacks/java)
 - [Scala (SBT)](https://github.com/paketo-buildpacks/sbt)
 - [PHP](https://github.com/paketo-buildpacks/php)
@@ -58,7 +63,7 @@ Provides `Procfile` launcher support with the [Procfile buildpack](https://githu
 
 Provides `Procfile` launcher support with the [Procfile Paketo Buildpack](https://github.com/paketo-buildpacks/procfile)  
 
-## [Google](https://github.com/GoogleCloudPlatform/buildpacks)
+## [Google Cloud Buildpacks](https://github.com/GoogleCloudPlatform/buildpacks)
 
 `gcr.io/buildpacks/builder`
 
