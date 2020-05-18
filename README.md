@@ -4,22 +4,35 @@ This is the repository for a collection of [Cloud-Native Buildpacks](https://bui
 
 ## [Heroku](https://devcenter.heroku.com/)
 
-`heroku/buildpacks:18`([source](https://github.com/heroku/pack-images))
+`heroku/buildpacks:18` ([source](https://github.com/heroku/pack-images))
 
 ### Provides buildpacks for:
 
-- [Java](https://github.com/heroku/heroku-buildpack-java) (Maven, [Gradle](https://github.com/heroku/heroku-buildpack-gradle), [Clojure](https://github.com/heroku/heroku-buildpack-clojure))
-- [Ruby](https://github.com/heroku/heroku-buildpack-ruby)
-- [NodeJS](https://github.com/heroku/nodejs-engine-buildpack) ([npm](https://github.com/heroku/nodejs-npm-buildpack/), [yarn](https://github.com/heroku/nodejs-yarn-buildpack))
-- [Python](https://github.com/heroku/heroku-buildpack-python) (via [cnb-shim](https://github.com/heroku/cnb-shim))
-- [Scala](https://github.com/heroku/heroku-buildpack-scala)
-- [PHP](https://github.com/heroku/heroku-buildpack-php/) (via [cnb-shim](https://github.com/heroku/cnb-shim))
-- [Golang](https://github.com/heroku/heroku-buildpack-go) (via [cnb-shim](https://github.com/heroku/cnb-shim))
+- [Java](https://github.com/heroku/heroku-buildpack-java)
+    (Maven,
+    [Gradle](https://github.com/heroku/heroku-buildpack-gradle),
+    [Clojure](https://github.com/heroku/heroku-buildpack-clojure))
 
+- [Ruby](https://github.com/heroku/heroku-buildpack-ruby)
+
+- [NodeJS](https://github.com/heroku/nodejs-engine-buildpack)
+    ([npm](https://github.com/heroku/nodejs-npm-buildpack/),
+    [yarn](https://github.com/heroku/nodejs-yarn-buildpack))
+
+- [Python](https://github.com/heroku/heroku-buildpack-python)
+    (via [cnb-shim](https://github.com/heroku/cnb-shim))
+
+- [Scala](https://github.com/heroku/heroku-buildpack-scala)
+
+- [PHP](https://github.com/heroku/heroku-buildpack-php/)
+    (via [cnb-shim](https://github.com/heroku/cnb-shim))
+
+- [Golang](https://github.com/heroku/heroku-buildpack-go)
+    (via [cnb-shim](https://github.com/heroku/cnb-shim))
 
 Provides `Procfile` launcher support with the [Procfile buildpack](https://github.com/heroku/procfile-cnb)
 
-##  [Paketo](https://paketo.io/docs/)
+## [Paketo](https://paketo.io/docs/)
 
 (Formerly known as **CloudFoundry Buildpacks**)
 
