@@ -66,3 +66,17 @@ Provides `Procfile` launcher support with the [Procfile buildpack](https://githu
 - PHP
 
 Provides `Procfile` launcher support.
+
+## [Google](https://github.com/GoogleCloudPlatform/buildpacks)
+
+`gcr.io/buildpacks/builder`
+
+### Provides [Generic](https://github.com/GoogleCloudPlatform/buildpacks#generic-builder-and-buildpacks) builders for:
+
+- Golang
+- Node
+- Python
+- Java
+- .NET
+
+Also provides support to build [Google Cloud Functions](https://github.com/GoogleCloudPlatform/buildpacks#building-a-function)
