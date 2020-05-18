@@ -2,7 +2,7 @@
 
 This is the repository for a collection of [Cloud-Native Buildpacks](https://buildpacks.io/), all outlined with some quick feature annotations.
 
-## [Heroku](https://devcenter.heroku.com/)
+## [Heroku Buildpacks](https://devcenter.heroku.com/)
 
 `heroku/buildpacks:18` ([source](https://github.com/heroku/pack-images))
 
@@ -34,42 +34,36 @@ Provides `Procfile` launcher support with the [Procfile buildpack](https://githu
 
 *Existing heroku buildpacks can be implicitly converted to CNBs by applying [heroku's CNB shim](https://github.com/heroku/cnb-shim).*
 
-## [Paketo](https://paketo.io/docs/)
+## [Paketo Buildpacks](https://paketo.io/)
 
-(Formerly known as **CloudFoundry Buildpacks**)
+(A **CloudFoundry Project** applying learnings from **CloudFoundry Buildpacks**)
 
-`gcr.io/paketo-buildpacks/builder:full-cf`
-<br>
-(provides full support + native extensions)
+#### Builders:
 
-`gcr.io/paketo-buildpacks/builder:base`
-<br>
-(Provides support for Java, NodeJS and Golang)
+([source](https://github.com/paketo-buildpacks/builder))
 
-`gcr.io/paketo-buildpacks/builder:tiny`
-<br>
-(Provides minimal support for Golang)
+`gcr.io/paketo-buildpacks/builder:full-cf`<br>
+(`ubuntu:bionic`-based [paketo stack](https://github.com/paketo-buildpacks/stacks) with common C libraries and utilities.)
 
-### `full-cf` provides builders for:
+`gcr.io/paketo-buildpacks/builder:base`<br>
+(`ubuntu:bionic`-based [paketo stack](https://github.com/paketo-buildpacks/stacks) **without** many C libraries.)
 
-- Golang (mod, dep)
-- .NET (core, core ASP)
-- NodeJS (npm, yarn)
-- Java
-  - Tomcat
-  - Executable Jar
-  - Gradle
-  - Spring Boot
-  - Maven
-  - SBT
-  - Bellsoft Liberica
-  - JMX
-- Scala (SBT)
-- PHP
+`gcr.io/paketo-buildpacks/builder:tiny`<br>
+(Distroless `ubuntu:bionic`-based [paketo stack](https://github.com/paketo-buildpacks/stacks). Ideal for most Go apps)
 
-Provides `Procfile` launcher support.
+### Provides buildpacks for:
 
-## [Google](https://github.com/GoogleCloudPlatform/buildpacks)
+- [Golang](https://github.com/paketo-buildpacks/go)
+- [.NET Core](https://github.com/paketo-buildpacks/dotnet-core)
+- [NodeJS](https://github.com/paketo-buildpacks/nodejs)
+- [Java](https://github.com/paketo-buildpacks/java)
+- [Scala (SBT)](https://github.com/paketo-buildpacks/sbt)
+- [PHP](https://github.com/paketo-buildpacks/php)
+- [NGINX](https://github.com/paketo-buildpacks/nginx)
+
+Provides `Procfile` launcher support with the [Procfile Paketo Buildpack](https://github.com/paketo-buildpacks/procfile)  
+
+## [Google Cloud Buildpacks](https://github.com/GoogleCloudPlatform/buildpacks)
 
 `gcr.io/buildpacks/builder`
 
@@ -82,3 +76,4 @@ Provides `Procfile` launcher support.
 - .NET
 
 Also provides support to build [Google Cloud Functions](https://github.com/GoogleCloudPlatform/buildpacks#building-a-function)
+
