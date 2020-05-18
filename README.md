@@ -32,6 +32,8 @@ This is the repository for a collection of [Cloud-Native Buildpacks](https://bui
 
 Provides `Procfile` launcher support with the [Procfile buildpack](https://github.com/heroku/procfile-cnb)
 
+*Existing heroku buildpacks can be implicitly converted to CNBs by applying [heroku's CNB shim](https://github.com/heroku/cnb-shim).*
+
 ## [Paketo](https://paketo.io/docs/)
 
 (Formerly known as **CloudFoundry Buildpacks**)

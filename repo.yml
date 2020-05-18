@@ -41,36 +41,41 @@ buildpacks:
       - img: "heroku/buildpacks:18"
         url: "https://github.com/heroku/pack-images"
     builders:
-      - lang: java
-        src: "https://github.com/heroku/heroku-buildpack-java"
-        with:
-          - maven
-          - name: gradle
-            src: "https://github.com/heroku/heroku-buildpack-gradle"
-          - name: clojure
-            src: "https://github.com/heroku/heroku-buildpack-clojure"
-      - lang: ruby
-        src: "https://github.com/heroku/heroku-buildpack-ruby"
-      - lang: python
-        src: "https://github.com/heroku/heroku-buildpack-python"
-        via: "https://github.com/heroku/cnb-shim"
-      - lang: scala
-        src: "https://github.com/heroku/heroku-buildpack-scala"
-      - lang: php
-        src: "https://github.com/heroku/heroku-buildpack-php/"
-        via: "https://github.com/heroku/cnb-shim"
-      - lang: golang
-        src: "https://github.com/heroku/heroku-buildpack-go"
-        via: "https://github.com/heroku/cnb-shim"
-      - lang: nodejs
-        src: "https://github.com/heroku/nodejs-engine-buildpack"
-        with:
-          - name: npm
-            src: "https://github.com/heroku/nodejs-npm-buildpack/"
-          - name: yarn
-            src: "https://github.com/heroku/nodejs-yarn-buildpack"
-      - exec: procfile
-        src: "https://github.com/heroku/procfile-cnb"
+      bundled:
+        list:
+          - lang: java
+            src: "https://github.com/heroku/heroku-buildpack-java"
+            with:
+              - maven
+              - name: gradle
+                src: "https://github.com/heroku/heroku-buildpack-gradle"
+              - name: clojure
+                src: "https://github.com/heroku/heroku-buildpack-clojure"
+          - lang: ruby
+            src: "https://github.com/heroku/heroku-buildpack-ruby"
+          - lang: python
+            src: "https://github.com/heroku/heroku-buildpack-python"
+            via: "https://github.com/heroku/cnb-shim"
+          - lang: scala
+            src: "https://github.com/heroku/heroku-buildpack-scala"
+          - lang: php
+            src: "https://github.com/heroku/heroku-buildpack-php/"
+            via: "https://github.com/heroku/cnb-shim"
+          - lang: golang
+            src: "https://github.com/heroku/heroku-buildpack-go"
+            via: "https://github.com/heroku/cnb-shim"
+          - lang: nodejs
+            src: "https://github.com/heroku/nodejs-engine-buildpack"
+            with:
+              - name: npm
+                src: "https://github.com/heroku/nodejs-npm-buildpack/"
+              - name: yarn
+                src: "https://github.com/heroku/nodejs-yarn-buildpack"
+          - exec: procfile
+            src: "https://github.com/heroku/procfile-cnb"
+      shim:
+        url: "https://github.com/heroku/cnb-shim"
+
   - name: Google
     url: "https://github.com/GoogleCloudPlatform/buildpacks"
     image:
