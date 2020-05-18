@@ -6,39 +6,64 @@ buildpacks:
       - "gcr.io/paketo-buildpacks/builder:tiny"
     builders:
       - lang: golang
-        with: [mod, dep]
+        with:
+          - mod
+          - dep
       - lang: dot-net
-        with: [core, core-aspnet]
+        with:
+          - core
+          - core-aspnet
       - lang: nodejs
-        with: [npm, yarn]
+        with:
+          - npm
+          - yarn
       - lang: java
         with:
-          [
-            tomcat,
-            exec-jar,
-            gradle,
-            spring-boot,
-            maven,
-            sbt,
-            bellsoft-liberica,
-            jmx,
-          ]
+          - tomcat
+          - exec-jar
+          - gradle
+          - spring-boot
+          - maven
+          - sbt
+          - bellsoft-liberica
+          - jmx
       - lang: scala
-        with: [sbt]
+        with:
+          - sbt
       - lang: php
       - exec: procfile
-
   - name: Heroku
     image:
-      - "heroku/buildpacks:18"
+      - img: "heroku/buildpacks:18"
+        url: "https://github.com/heroku/pack-images"
     builders:
       - lang: java
-        with: [maven, gradle, clojure]
+        src: "https://github.com/heroku/heroku-buildpack-java"
+        with:
+          - maven
+          - name: gradle
+            src: "https://github.com/heroku/heroku-buildpack-gradle"
+          - name: clojure
+            src: "https://github.com/heroku/heroku-buildpack-clojure"
       - lang: ruby
+        src: "https://github.com/heroku/heroku-buildpack-ruby"
       - lang: python
+        src: "https://github.com/heroku/heroku-buildpack-python"
+        via: "https://github.com/heroku/cnb-shim"
       - lang: scala
+        src: "https://github.com/heroku/heroku-buildpack-scala"
       - lang: php
+        src: "https://github.com/heroku/heroku-buildpack-php/"
+        via: "https://github.com/heroku/cnb-shim"
       - lang: golang
+        src: "https://github.com/heroku/heroku-buildpack-go"
+        via: "https://github.com/heroku/cnb-shim"
       - lang: nodejs
-        with: [npm, yarn]
+        src: "https://github.com/heroku/nodejs-engine-buildpack"
+        with:
+          - name: npm
+            src: "https://github.com/heroku/nodejs-npm-buildpack/"
+          - name: yarn
+            src: "https://github.com/heroku/nodejs-yarn-buildpack"
       - exec: procfile
+        src: "https://github.com/heroku/procfile-cnb"
